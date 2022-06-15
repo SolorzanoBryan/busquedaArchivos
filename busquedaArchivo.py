@@ -353,16 +353,16 @@ class Grafo:
 if __name__ == "__main__": 
 
   # Ejecución del arreglo_maestro
-  arreglo_maestro(ruta)
+  arreglo_maestro(ruta) # Llamada principal
 
 
   # Inicio del proceso: Creación de lso diccionarios compuesots por lso nodos
   nodoInicial = camino.name 
   num = 0
-  nodos = {num: nodoInicial}
-  for nodo in arreglo_hero:
+  nodos = {num: nodoInicial} # Decimos que el primer nodo sera el primer nombre del camino 
+  for nodo in arreglo_hero: # Cilco al arreglo proncipal
     num = num + 1
-    nodos[num]= nodo
+    nodos[num]= nodo # Asignamos los nodos con sus valores
 
   num = 0
   nodosInvertidos = {nodoInicial: num}
@@ -395,16 +395,13 @@ if __name__ == "__main__":
   print('GRAFO 1')
   buscar = input('Ingrese su archivo o docuemnto a buscar: ')
   objetivo = nodosInvertidos.get(buscar)
-  # print(objetivo)
-  ruta = grafo.bpp(0, objetivo)
+  ruta = grafo.bpp(0, objetivo) # Se procede con la busqueda
 
-  if ruta != None:  
+  if ruta != None:  # La ruta tiene que ser diferente de Vacio para que se proceda con mostrar un resultado 
     print(f" La ruta transversal del nodo 0 al nodo 3 es {ruta}")
     new_ruta = []
     for plox in ruta:
-      new_ruta.append(nodos.get(plox))
+      new_ruta.append(nodos.get(plox)) # Extraemos y guardamos segun el nodo que corresponda, pero mostrando nombres
     print(f" La ruta transversal del nodo 0 al nodo 3 es {new_ruta}")
   else:
     print(f"El nombre del archivo no coincide en este sistema de directorio")
-
-
